@@ -1,0 +1,16 @@
+RestaurantBundle\Entity\PlatType:
+    type: entity
+    table: plat_type
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 50
+    oneToMany:
+        plats:
+            targetEntity: Plat
+            mappedBy: plat_type

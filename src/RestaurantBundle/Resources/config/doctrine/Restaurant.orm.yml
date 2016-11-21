@@ -1,0 +1,26 @@
+RestaurantBundle\Entity\Restaurant:
+    type: entity
+    table: restaurant
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 50
+        adress:
+            type: string
+            length: 255
+        tel:
+            type: string
+            length: 14
+        description:
+            type: string
+            length: 255
+    oneToMany:
+        plats:
+            targetEntity: Plat
+            mappedBy: restaurant
+            onDelete: CASCADE

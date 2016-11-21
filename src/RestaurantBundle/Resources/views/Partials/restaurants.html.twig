@@ -1,0 +1,24 @@
+{% extends 'RestaurantBundle::layout.html.twig' %}
+
+{% block content %}
+    <div>
+        <h2>Liste des restaurants</h2>
+        <div><ul>
+            {% for restaurant in restaurants %}
+                <li>
+                    <span style="margin-right:10px;">
+                        <a href="{{ path("restaurant_get", { id :restaurant.id}) }}">{{ restaurant.name|capitalize }}</a>
+                    </span>
+                    <a href="{{ path("restaurant_edit", { id:restaurant.id}) }}"><button class="btn">Modifier</button></a>&nbsp;
+                    <a href="{{ path("restaurant_delete", { id:restaurant.id}) }}"><button class="btn">Supprimer</button></a>
+                </li>
+            {% endfor %}
+        </ul>
+        </div>
+        <p>
+            <a href="{{ path("restaurant_add") }}">
+                <button class="btn btn-primary"/>Ajouter un Restaurant</button>
+            </a>
+        </p>
+    </div>
+{% endblock %}

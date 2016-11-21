@@ -1,0 +1,25 @@
+restaurant_getAll:
+    path:     /restaurants
+    defaults: { _controller: RestaurantBundle:Restaurant:index }
+
+restaurant_add:
+    path:     /restaurant
+    defaults: { _controller: RestaurantBundle:Restaurant:add }
+
+restaurant_edit:
+    path:     /restaurant/{id}/edit
+    defaults: { _controller: RestaurantBundle:Restaurant:edit }
+    requirements:
+         id : '\d+'
+
+restaurant_delete:
+    path:     /restaurant/{id}/delete
+    defaults: { _controller: RestaurantBundle:Restaurant:delete }
+    requirements:
+         id : '\d+'
+
+restaurant_get:
+    path:     /restaurant/{id}
+    defaults: { _controller: RestaurantBundle:Restaurant:view }
+    requirements:
+         id : '\d+'

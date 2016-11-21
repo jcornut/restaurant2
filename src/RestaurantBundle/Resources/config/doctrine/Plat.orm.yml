@@ -1,0 +1,34 @@
+RestaurantBundle\Entity\Plat:
+    type: entity
+    table: plat
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 50
+        composition:
+            type: string
+            length: 255
+        prix:
+            type: decimal
+            precision: 10
+            scale: 2
+    manyToOne:
+        type:
+            targetEntity: PlatType
+            inversedBy: plats
+            joinColumn:
+                name: plat_type_id
+                referencedColumnName: id
+
+        restaurant:
+            targetEntity: Restaurant
+            inversedBy: plats
+            joinColumn:
+                name: restaurant_id
+                referencedColumnName: id
+                onDelete: CASCADE
