@@ -14,3 +14,4 @@ RestaurantBundle\Entity\PlatType:
         plats:
             targetEntity: Plat
             mappedBy: plat_type
+            onDelete: CASCADE

@@ -24,6 +24,7 @@ RestaurantBundle\Entity\Plat:
             joinColumn:
                 name: plat_type_id
                 referencedColumnName: id
+                onDelete: CASCADE
 
         restaurant:
             targetEntity: Restaurant
